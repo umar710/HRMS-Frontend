@@ -1,70 +1,329 @@
-# Getting Started with Create React App
+# HRMS Frontend - Human Resource Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive Human Resource Management System (HRMS) frontend built with React.js and Tailwind CSS. Provides a complete user interface for managing employees, teams, and tracking organizational activities.
 
-## Available Scripts
+## 🚀 Live Deployment
 
-In the project directory, you can run:
+**Live Application:** [https://hrms-frontend-sand.vercel.app](https://hrms-frontend-sand.vercel.app)
 
-### `npm start`
+## 🧪 Testing & Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Quick Start for Testing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Option 1: Create Your Organisation Account (Recommended for Full Testing)
 
-### `npm test`
+1. **Visit:** [https://hrms-frontend-sand.vercel.app/register](https://hrms-frontend-sand.vercel.app/register)
+2. **Fill in the registration form:**
+   ```
+   Organisation Name: YourCompanyName
+   Your Name: Your Full Name
+   Email address: your-email@test.com
+   Password: password123
+   Confirm Password: password123
+   ```
+3. **Click "Create Account"**
+4. **You'll be automatically logged in and redirected to the dashboard**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Option 2: Use Existing Demo Accounts
 
-### `npm run build`
+If you prefer to use pre-configured accounts:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**🏢 TechCorp Solutions**
+```
+Organisation Name: TechCorp Solutions
+Email: admin@techcorp.com
+Password: password123
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🔐 Authentication Pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Create Your Organisation Account (`/register`)
+- Register your company and create the first admin user
+- All fields are required with validation
+- Organisation name must be unique
+- Email must be unique across all organisations
+- Password must be at least 6 characters
 
-### `npm run eject`
+#### Sign in to Your Account (`/login`)
+- Login with your organisation credentials
+- Requires organisation name, email, and password
+- Secure JWT token-based authentication
+- Automatic redirect to dashboard on success
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 📱 Application Tour
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After logging in, explore these features:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### 🏠 Dashboard (`/`)
+- Overview of your organisation
+- Employee and team statistics
+- Recent activity feed
+- Quick access to all features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### 👥 Employees Management (`/employees`)
+- **View Employees**: See all employees with team assignments
+- **Add Employee**: Create new employee records
+- **Edit Employee**: Update existing employee information
+- **Delete Employee**: Remove employees with confirmation
+- **Assign to Teams**: Manage team memberships
 
-## Learn More
+#### 👨‍👩‍👧‍👦 Teams Management (`/teams`)
+- **View Teams**: Card-based team display
+- **Create Team**: Establish new teams with descriptions
+- **Edit Team**: Modify team information
+- **Delete Team**: Remove teams
+- **View Members**: See all team members
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 📊 Audit Logs (`/audit-logs`)
+- **Activity Tracking**: Complete history of all actions
+- **Filtering**: Filter by action type, resource, and date
+- **Statistics**: Action counts and daily activity
+- **Pagination**: Navigate through activity history
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎯 Complete Test Scenario
 
-### Code Splitting
+### Step-by-Step Testing Guide
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Phase 1: Account Setup
+1. **Register New Organisation**
+   - Go to registration page
+   - Fill in organisation details
+   - Create admin account
+   - Verify automatic login
 
-### Analyzing the Bundle Size
+2. **Test Login/Logout**
+   - Log out from the application
+   - Log back in with your credentials
+   - Verify session persistence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Phase 2: Employee Management
+3. **Add Sample Employees**
+   ```
+   Employee 1:
+   - First Name: John
+   - Last Name: Smith
+   - Email: john.smith@yourcompany.com
+   - Position: Software Engineer
+   - Department: Engineering
+   - Hire Date: 2024-01-15
+   ```
 
-### Making a Progressive Web App
+   ```
+   Employee 2:
+   - First Name: Sarah
+   - Last Name: Johnson
+   - Email: sarah.johnson@yourcompany.com
+   - Position: Product Manager
+   - Department: Product
+   - Hire Date: 2024-02-01
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. **Test Employee Operations**
+   - Edit an employee's position
+   - Assign employees to teams (after creating teams)
+   - Delete an employee (with confirmation)
 
-### Advanced Configuration
+#### Phase 3: Team Management
+5. **Create Teams**
+   ```
+   Team 1:
+   - Name: Development Team
+   - Description: Software development and engineering
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```
+   Team 2:
+   - Name: Product Team
+   - Description: Product management and design
+   ```
 
-### Deployment
+6. **Assign Employees to Teams**
+   - Use the "Assign Teams" button on Employees page
+   - Assign multiple employees to each team
+   - Verify team member counts update
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Phase 4: Audit & Reporting
+7. **Check Audit Logs**
+   - Navigate to Audit Logs page
+   - Verify all your actions are recorded
+   - Test filtering by different criteria
 
-### `npm run build` fails to minify
+8. **Review Dashboard**
+   - Check updated statistics
+   - Verify recent activities list
+   - Confirm employee and team counts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 🐛 Testing Edge Cases
+
+#### Authentication Testing
+- ✅ Register with duplicate organisation name (should show error)
+- ✅ Register with duplicate email (should show error)
+- ✅ Login with invalid credentials (should show error)
+- ✅ Access protected routes without login (should redirect to login)
+
+#### Form Validation Testing
+- ✅ Employee form with missing required fields
+- ✅ Invalid email format in forms
+- ✅ Team name uniqueness validation
+- ✅ Password confirmation mismatch
+
+#### Data Operations Testing
+- ✅ Create employee with existing email (should show error)
+- ✅ Delete employee with team assignments
+- ✅ Edit team with existing name (should show error)
+- ✅ Assign employee to same team multiple times (should show error)
+
+### 📊 Expected Test Results
+
+After completing the test scenario:
+
+#### Dashboard
+- ✅ 2 employees shown in total count
+- ✅ 2 teams shown in total count
+- ✅ Recent activities showing your actions
+- ✅ Statistics updating in real-time
+
+#### Employees Page
+- ✅ Both employees displayed with correct information
+- ✅ Team assignments showing as colored badges
+- ✅ All action buttons functional
+
+#### Teams Page
+- ✅ Both teams displayed in cards
+- ✅ Member counts accurate (1-2 members each)
+- ✅ Team descriptions visible
+- ✅ Edit/delete functionality working
+
+#### Audit Logs
+- ✅ Complete trail of all 10+ actions performed
+- ✅ User information for each action
+- ✅ Timestamps for all activities
+- ✅ Filtering working correctly
+
+### 🎯 Quick Demo for Interviews
+
+**5-Minute Demo Script:**
+
+1. **"Let me show you our HRMS application"** - Open live URL
+2. **"First, I'll register a new organisation"** - Demo registration flow
+3. **"Now I'll add some sample employees"** - Create 2 employees quickly
+4. **"Let me create teams and assign members"** - Team creation & assignment
+5. **"Notice the real-time dashboard updates"** - Show statistics
+6. **"All activities are automatically logged"** - Demonstrate audit trail
+7. **"The app is fully responsive"** - Show mobile view
+
+### 📝 Sample Data for Quick Testing
+
+#### Quick Employee Setup:
+```json
+[
+  {
+    "first_name": "Alex",
+    "last_name": "Thompson",
+    "email": "alex.thompson@test.com",
+    "position": "Frontend Developer",
+    "department": "Engineering"
+  },
+  {
+    "first_name": "Maria",
+    "last_name": "Garcia", 
+    "email": "maria.garcia@test.com",
+    "position": "UX Designer",
+    "department": "Design"
+  }
+]
+```
+
+#### Quick Team Setup:
+```json
+[
+  {
+    "name": "Web Development",
+    "description": "Frontend and backend web development"
+  },
+  {
+    "name": "Design Team",
+    "description": "User experience and interface design"
+  }
+]
+```
+
+## 🛠️ Tech Stack
+
+- **Framework:** React 18
+- **Styling:** Tailwind CSS
+- **Routing:** React Router DOM
+- **State Management:** React Query (TanStack Query)
+- **HTTP Client:** Axios
+- **Forms:** React Hook Form
+- **UI Components:** Headless UI
+- **Icons:** Heroicons
+- **Date Handling:** date-fns
+- **Deployment:** Vercel
+
+## 📁 Project Structure
+
+```
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── Layout.js           # Main layout with navigation
+│   │   ├── Modal.js            # Reusable modal component
+│   │   ├── EmployeeForm.js     # Employee create/edit form
+│   │   ├── TeamForm.js         # Team create/edit form
+│   │   └── TeamAssignment.js   # Team assignment component
+│   ├── pages/
+│   │   ├── Login.js            # Sign in to your account
+│   │   ├── Register.js         # Create organisation account
+│   │   ├── Dashboard.js        # Overview dashboard
+│   │   ├── Employees.js        # Employee management
+│   │   ├── Teams.js            # Team management
+│   │   └── AuditLogs.js        # Activity tracking
+│   ├── services/
+│   │   └── api.js              # API service layer
+│   ├── contexts/
+│   │   └── AuthContext.js      # Authentication context
+│   └── App.js                  # Main application component
+```
+
+## 🚀 Local Development
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd hrms/frontend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm start
+   ```
+
+4. **Application runs at** `http://localhost:3000`
+
+## 🔗 Links
+
+- **Live Application:** https://hrms-frontend-sand.vercel.app
+- **Backend API:** https://hrms-backend-q8zb.onrender.com
+- **Source Code:** [GitHub Repository]
+
+## 📞 Support
+
+For issues or questions during testing:
+1. Check browser console for errors
+2. Verify all form fields are filled correctly
+3. Ensure stable internet connection
+4. Try refreshing the page if issues persist
+
+---
