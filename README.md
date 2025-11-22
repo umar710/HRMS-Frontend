@@ -30,8 +30,8 @@ If you prefer to use pre-configured accounts:
 
 **🏢 TechCorp Solutions**
 ```
-Organisation Name: TechCorp Solutions
-Email: admin@techcorp.com
+Organisation Name: YourCompanyName
+Email:  your-email@test.com
 Password: password123
 ```
 
